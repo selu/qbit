@@ -1,46 +1,46 @@
 [package]
-name          = "qbit-rs"
-version       = "0.4.1"
-edition       = "2021"
-license       = "MIT"
-description   = "A Rust library for interacting with qBittorrent's Web API"
-readme        = "README.md"
+name = "qbit-rs"
+version = "0.4.1"
+edition = "2021"
+license = "MIT"
+description = "A Rust library for interacting with qBittorrent's Web API"
+readme = "README.md"
 documentation = "https://docs.rs/qbit-rs"
-repository    = "https://github.com/George-Miao/qbit"
-homepage      = "https://github.com/George-Miao/qbit"
-authors       = ["George Miao <gm@miao.dev>"]
-keywords      = ["qbit", "qBittorrent", "web", "api", "torrent"]
-categories    = ["network-programming"]
+repository = "https://github.com/George-Miao/qbit"
+homepage = "https://github.com/George-Miao/qbit"
+authors = ["George Miao <gm@miao.dev>"]
+keywords = ["qbit", "qBittorrent", "web", "api", "torrent"]
+categories = ["network-programming"]
 
 [package.metadata.docs.rs]
-features     = ["docs"]
+features = ["docs"]
 rustdoc-args = ["--cfg", "feature=\"docs\""]
 
 [features]
 default = ["builder"]
-docs    = []
+docs = []
 
 # enables typed-builder on args types
 builder = ["dep:typed-builder"]
 
 
 [dependencies]
-typed-builder = { version = "0.14.0", optional = true }
-serde         = { version = "1.0.159", features = ["derive"] }
-reqwest       = { version = "0.11.16", features = ["json"] }
-url           = { version = "2.3.1", features = ["serde"] }
+typed-builder = { version = "0.18.0", optional = true }
+serde = { version = "1.0.159", features = ["derive"] }
+reqwest = { version = "0.12.4", features = ["json"] }
+url = { version = "2.3.1", features = ["serde"] }
 
-mod_use     = "0.2.1"
+mod_use = "0.2.1"
 serde-value = "0.7.0"
-serde_repr  = "0.1.12"
-serde_with  = "2.3.2"
-tap         = "1.0.1"
-thiserror   = "1.0.40"
-tracing     = "0.1.37"
-serde_json  = "1.0.96"
+serde_repr = "0.1.12"
+serde_with = "2.3.2"
+tap = "1.0.1"
+thiserror = "1.0.40"
+tracing = "0.1.37"
+serde_json = "1.0.96"
 
 [dev-dependencies]
 tokio = { version = "1.27.0", features = ["full"] }
 
-dotenv             = "0.15.0"
+dotenv = "0.15.0"
 tracing-subscriber = "0.3.16"
